@@ -1,0 +1,38 @@
+how-to-setup-mariadb.txt
+========================
+
+1) sudo apt install -y build-essential cmake libncurses5-dev libssl-dev zlib1g-dev libaio-dev libpcre3-dev libxml2-dev
+
+2) Go to https://mariadb.org/download/ and download tar.gz file
+
+3) mkdir -p ~/Apps/mariadb
+
+4) Untar the MariaDB tar in the ~/Apps/mariadb dir
+
+5) cd ~/Apps/mariadb/build/mariadb-[xx].[y].[z]
+
+6) cmake . -DCMAKE_INSTALL_PREFIX=~/Apps/mariadb -DMYSQL_DATADIR=~/Apps/mariadb/data -DSYSCONFDIR=~/Apps/mariadb/etc
+
+7) time make -j$(nproc)
+
+8) make install
+
+9) sudo groupadd -r mysql
+
+10) sudo useradd -r -g mysql -s /sbin/nologin -d /home/devel/Apps/mariadb mysql
+
+11) cd ~/Apps/mariadb
+
+12) mkdir ~/Apps/mariadb/data
+
+13) chmod 755 /home/devel
+
+14) sudo ./scripts/mariadb-install-db --user=mysql --datadir=/home/devel/Apps/mariadb/data
+
+15) sudo chown -R mysql:mysql ~/Apps/mariadb
+
+16) sudo ~/Apps/mariadb/bin/mariadbd-safe --user=mysql &
+
+17) cd ~/Apps/mariadb/bin
+
+18) ./mariadb

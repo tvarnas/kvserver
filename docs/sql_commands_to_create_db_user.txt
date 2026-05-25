@@ -1,0 +1,5 @@
+sql_command_to_create_db_user.txt
+=================================
+
+mdb-cmd.sh "CREATE USER 'dbuser'@'localhost' IDENTIFIED BY '57Lpcustom';"
+mdb-cmd.sh "GRANT ALL PRIVILEGES ON kvserver.* TO 'dbuser'@'localhost';"

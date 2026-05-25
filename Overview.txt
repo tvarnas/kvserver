@@ -1,0 +1,47 @@
+NOTE: "ENTRY" means Key/Value pair
+
+1. SECTION
+----------
+1a. CREATE SECTION
+	Insert new SECTION in MASTER_ARRAY
+	Need 1 param (Section name)
+	Output: new empty SECTION in MASTER_ARRAY
+
+1b. READ/GET SECTION 
+	Iterate through all ENTRIES within a SECTION
+	and create associative array of ENTRIES
+	Need 1 param (SECTION name)
+	Output: data array
+
+1c. UPDATE/CHANGE SECTION
+	Renames SECTION HEADER
+	Need 2 params (Current SECTION name, New SECTION name)
+	Output: Changed SECTION name
+
+1d. DELETE SECTION 
+	Delete SECTION and all contained ENTRIES
+	Need 1 param (SECTION name)
+	Output: SECTION subarray removed
+
+
+2. ENTRY (within SECTION)
+-------------------------
+
+2a. CREATE ENTRY
+	Insert new ENTRY within MASTER_ARRAY
+	Need 3 params (SECTION/KEY/VALUE)
+	Output: new empty ENTRY in SECTION
+
+2b. READ/GET ENTRY VALUE
+    need 2 params (SECTION/KEY)
+    Output: Value
+
+2c. UPDATE/CHANGE ENTRY
+    Change an ENTRY within MASTER_ARRAY
+	Need 3 params (SECTION/KEY/VALUE)
+	Output: altered ENTRY in SECTION
+
+2d. DELETE ENTRY
+    Remove ENTRY from within SECTION
+    need 2 params (SECTION/KEY)
+	Output: ENTRY removed from within SECTION
